@@ -7,22 +7,24 @@ console.log(path);
 var artists=["Katy_Perry","John_Legend","Taylor_Swift"]
 var art_name = path.split("/")[2];
 var album = path.split("/")[3];
+var katy="http://localhost:2000/artists/Katy_Perry"
+var john="http://localhost:2000/artists/John_Legend"
+var taylor="http://localhost:2000/artists/Taylor_Swift"
 
 if(path === "/artists" ){
-  msg = "<html><body><h1>Music Artists</h1><ul><li>Katy Perry</li><li>John Legend</li><li>Sam Smith</li></ul></body></html>";
+  msg = "<html><body><h1>Music Artists</h1><ul><li><a href=" + katy + ">Katy Perry</a></li><li><a href=" + john + ">John Legend</a></li><li><a href=" + taylor + ">Taylor Swift</a></li></ul></body></html>";
 }
 else if(path === "/artists/" + artists[0]){
-  msg="<html><body><h1>Albums</h1><ul><li>Prism</li><li>Teenage Dream</li></ul></body></html>";
+  msg="<html><body><h1>Albums</h1><ul><li><a href=" + katy + "/prism>Prism</a></li><li><a href=" + katy + "/teenagedream>Teenage Dream</a></li></ul></body></html>";
 }
 
 else if(path === "/artists/" + artists[1]){
-  msg="<html><body><h1>Albums</h1><ul><li>Wake up!</li><li>Once Again!</li></ul></body></html>";
+  msg="<html><body><h1>Albums</h1><ul><li><a href=" + john + "/wakeup>Wake up!</a></li><li><a href=" + john + "/onceagain>Once Again!</a></li></ul></body></html>";
 }
 
 else if(path === "/artists/" + artists[2]){
-  msg="<html><body><h1>Albums</h1><ul><li>1989</li><li>Reds</li></ul></body></html>";
+  msg="<html><body><h1>Albums</h1><ul><li><a href=" + taylor + "/1989>1989</a></li><li><a href=" + taylor + "/red>Red</a></li></ul></body></html>";
 }
-
 
 
 else if(path === "/artists/" + art_name + "/" + album){
